@@ -14,7 +14,8 @@ def get_completion(prompt, model="gpt-3.5-turbo"):
         )
     return response.choices[0].message["content"]
 
-prompt = "ich brauche ein iobroker javascript das konitnierlich die Variable alias.0.Strom.aktSpeicherBeladung_Watt überwacht. Wenn diese negativ wird  soll die Variable awtrix-light.0.apps.speicherentladen.visible  auf True  und awtrix-light.0.apps.speicherladen.visible auf false gesetzt werden. Wenn sie aber positiv  oder 0 wird soll die Variable awtrix-light.0.apps.speicherentladen.visible  auf False und awtrix-light.0.apps.speicherladen.visible auf True gesetzt werden."
+# read prompt from keyboard as string
+prompt = input("Frage eingeben: ")
 
 response = get_completion(prompt)
 
