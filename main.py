@@ -1,16 +1,22 @@
 from os import system
+import os
 from EdgeGPT.EdgeUtils import Query
 import speech_recognition as sr
 import sys, whisper, warnings, time, openai
 import ssl
+from dotenv import load_dotenv
+
 ssl._create_default_https_context = ssl._create_unverified_context
+
+load_dotenv()
 
 # Wake word variables
 BING_WAKE_WORD = "bing"
 GPT_WAKE_WORD = "gpt"
 
 # Initialize the OpenAI API
-openai.api_key = "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"
+#openai.api_key = "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"
+openai.api_key = os.getenv("OPENAI_API_KEY")
 
 r = sr.Recognizer()
 tiny_model = whisper.load_model('tiny')

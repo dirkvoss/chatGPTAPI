@@ -2,3 +2,4 @@
 *.wav
 bing_cookies*josn
 .DS_Store
+.env
